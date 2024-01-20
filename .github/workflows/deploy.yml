@@ -1,0 +1,44 @@
+# Nome dell'azione
+name: Update Demo
+
+# L'azione viene attivata ogni volta che viene eseguito un push su un tag
+on:
+  push:
+    tags:
+      - "*"
+
+# Inizia la definizione del lavoro di deploy
+jobs:
+  deploy:
+    # Assicura che solo un lavoro venga eseguito per ogni riferimento
+    concurrency: ci-${{ github.ref }}
+    # Il lavoro verrà eseguito su una macchina virtuale con l'ultima versione di Ubuntu
+    runs-on: ubuntu-latest
+
+    # Inizia la lista dei passaggi che il lavoro eseguirà
+    steps:
+      # Controlla il codice sorgente nel branch gh-pages del tuo repository
+      - uses: actions/checkout@v3
+        with:
+          ref: "gh-pages"
+
+      # Configura Node.js sulla macchina virtuale
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      # Installa le dipendenze, aggiorna il pacchetto react-dropdown-multilevel all'ultima versione e costruisce l'applicazione
+      - name: Build
+        run: |
+          yarn install --silent
+          yarn upgrade react-dropdown-multilevel --latest
+          yarn build
+
+      # Implementa l'applicazione su GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          destination_dir: ./
