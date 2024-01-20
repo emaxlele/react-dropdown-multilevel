@@ -33,7 +33,7 @@ jobs:
         run: |
           yarn install --silent
           yarn upgrade react-dropdown-multilevel --latest
-          yarn build
+          yarn build_linux
 
       # Implementa l'applicazione su GitHub Pages
       - name: Deploy
