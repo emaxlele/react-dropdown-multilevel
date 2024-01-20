@@ -2,49 +2,98 @@
 # react-dropdown-multilevel by emaxlele
 ReactJS multilevel dropdown component
 
-[📒 STORYBOOK](http://emaxlele.github.io/react-dropdown-multilevel)
+[📒 STORYBOOK](https://github.com/emaxlele/react-dropdown-multilevel-master)
 
 [![npm](https://img.shields.io/npm/v/react-dropdown-multilevel?style=plastic)](https://www.npmjs.com/package/react-dropdown-multilevel)
-[![NPM](https://img.shields.io/npm/l/react-dropdown-multilevel)](https://github.com/emaxlele/react-dropdown-multilevel/blob/master/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react-dropdown-multilevel)](https://github.com/emaxlele/react-dropdown-multilevel-master/blob/main/LICENSE)
 [![NPM](https://img.shields.io/npm/dy/react-dropdown-multilevel?style=plastic)](https://www.npmjs.com/package/react-dropdown-multilevel)
 
 ![React multilevel dropdown](https://github.com/emaxlele/react-dropdown-multilevel-master/blob/main/src/lib/images/example.png)
 
+## Table of Contents
+
+- [Install](#install)
+- [Testing](#testing)
+- [Example](#example)
+- [Docs](#docs)
+  - [Props](#props)
+
 ## Install
-`npm install react-dropdown-multilevel`
+
+Install the npm package.
 
 **NPM:** [npmjs.com/package/react-dropdown-multilevel](https://www.npmjs.com/package/react-dropdown-multilevel)
 
-## Development / testing
+```bash
+npm install react-dropdown-multilevel
+# or
+yarn add react-dropdown-multilevel
+```
+
+## Testing
+
 `npm run storybook`
 
-## Usage / Example
-```javascript
-import Dropdown from 'react-dropdown-multilevel';
-...
+## Example
 
-<Dropdown
-  title='Dropdown title'
->
-  <Dropdown.Item
-    onClick={() => doSomething()}
-  >
-    Item 1
-  </Dropdown.Item>
-  <Dropdown.Item>
-    Item 2
-    <Dropdown.Submenu>
-      <Dropdown.Item>
-        Subitem 1
-      </Dropdown.Item>
-    </Dropdown.Submenu>
-  </Dropdown.Item>
-</Dropdown>
+```jsx
+// Import default
+import DropDownMultilevel from "react-dropdown-multilevel";
+
+export const TestMenuComponent = (props) => {
+    return (
+        <DropDownMultilevel 
+                title='Dropdown title'
+        >
+         <DropDownMultilevel.Item 
+                 onClick={() => doSomething()}
+         >
+          Item 1
+         </DropDownMultilevel.Item>
+         <DropDownMultilevel.Item>
+          Item 2
+          <DropDownMultilevel.SubMenu>
+           <DropDownMultilevel.Item>
+            Subitem 1
+           </DropDownMultilevel.Item>
+          </DropDownMultilevel.SubMenu>
+         </DropDownMultilevel.Item>
+        </DropDownMultilevel>
+    );
+};
+// or
+// Import denomination
+import DropDownMultilevel, {
+ Divider,
+ Item,
+ SubMenu,
+} from "react-circular-menu";
+export const TestMenuComponent = (props) => {
+ return (
+         <DropDownMultilevel
+                 title='Dropdown title'
+         >
+          <Item
+                  onClick={() => doSomething()}
+          >
+           Item 1
+          </Item>
+          <Item>
+           Item 2
+           <SubMenu>
+            <Item>
+             Subitem 1
+            </Item>
+           </SubMenu>
+          </Item>
+         </DropDownMultilevel>
+ );
+};
 ```
 
 ## Docs
 
-### Props
+## Props
 #### Dropdown
 | NAME | TYPE | DEFAULT VALUE |
 |:-------------|:-------------|:-------------|
