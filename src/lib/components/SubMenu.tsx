@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {SharedProps} from "../types/index.types";
 
 export interface SubMenuProps extends SharedProps {
@@ -13,6 +13,8 @@ export default function SubMenu(
         className = "",
         style = {}
     } = props
+    const [open, setOpen] = useState(false);
+
 
     return (
         <div
