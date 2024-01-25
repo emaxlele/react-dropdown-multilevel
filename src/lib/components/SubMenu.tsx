@@ -20,6 +20,7 @@ export default function SubMenu(
         <div
             style={style}
             className={`submenu ${position} ${className}`}
+            tabIndex={0}
         >
             <ul>
                 {children && children}

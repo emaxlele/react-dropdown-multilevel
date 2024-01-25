@@ -97,7 +97,7 @@ function DropDownMultilevel (props:DropdownProps) {
             >
                 {(!children || title ? title : children) ?? "button"}
             </button>
-            {children && isOpen && (
+            {isDropDown && children && isOpen && (
                 <div style={styleMenu} className={`menu menu-${position} ${menuClassName}`}>
                     <ul>
                         {children}
