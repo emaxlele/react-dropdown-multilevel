@@ -1,4 +1,4 @@
-import React, {
+import {
     useState, useRef, useEffect, useCallback, CSSProperties,
 } from 'react';
 import Item from "./Item";
@@ -18,7 +18,7 @@ function DropDownMultilevel (props:DropdownProps) {
     } = props
     const [isOpen, setOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
-    let timeoutId:NodeJS.Timeout | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
     useEffect(() => () => {
         document.removeEventListener('mousedown', handleClick);

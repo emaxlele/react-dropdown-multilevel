@@ -1,4 +1,3 @@
-import React from "react";
 import {SharedProps} from "../types/index.types";
 
 export interface DividerProps extends SharedProps {
