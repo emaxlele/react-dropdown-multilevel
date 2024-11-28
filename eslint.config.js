@@ -27,7 +27,7 @@ export default [
             'plugin:react/recommended', // Regole base per React
             'plugin:react/jsx-runtime', // Supporto JSX runtime
             'plugin:react-hooks/recommended', // Regole base per gli hook di React
-            ...tseslint.configs.recommended, // Configurazioni raccomandate per TypeScript
+            '@typescript-eslint/recommended', // Configurazioni raccomandate per TypeScript
         ],
         settings: {
         react: {
