@@ -5,7 +5,7 @@ export default _default;
 
 
 /// <reference types="vite/client" />
-
+/*
 import { UserConfig } from 'vite';
 
 declare module 'vite' {
@@ -19,4 +19,4 @@ declare module 'vite' {
             };
         };
     }
-}
+}*/

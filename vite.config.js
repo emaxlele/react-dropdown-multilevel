@@ -29,7 +29,7 @@ export default defineConfig({
                     return `index.js`
                 }
             }, // Nome del file di output, in base al formato scelto
-            formats: ["es", /*"cjs",*/ "umd"] // Usa i formati ES Modules (ESM), CommonJS (CJS) e UMD (Universal Module Definition per CDN e script)
+            formats: ["es", /*"cjs",*/ /*"umd"*/] // Usa i formati ES Modules (ESM), CommonJS (CJS) e UMD (Universal Module Definition per CDN e script)
         },
         // Poiché stiamo creando una libreria, non generiamo il file HTML
         rollupOptions: {
