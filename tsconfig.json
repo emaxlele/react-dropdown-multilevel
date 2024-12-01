@@ -17,12 +17,15 @@
       //"skipLibCheck": true, // Salta il controllo delle librerie di tipo
       //"allowJs": true,  // Permette a TypeScript di compilare anche file JavaScript (.js)
         "lib": ["ESNext", "DOM"],
+    
+        "tsBuildInfoFile": "./dist-config/tsconfig.tsbuildinfo",
     },
     "include": [
         //"src/**/*.*", // Include tutto
         "src/**/*.ts",  // Include tutti i file TypeScript (.ts)
         "src/**/*.tsx", // Include tutti i file TypeScript JSX (.tsx)
-        //"src/**/*.js"   // Include tutti i file JavaScript (.js)
+        //"src/**/*.js",   // Include tutti i file JavaScript (.js)
+        "vite-env.d.ts"
     ],
     "exclude": [
         "node_modules",  // Esclude la cartella node_modules
