@@ -5,7 +5,7 @@
       "declaration": true, // Abilita la generazione dei file di dichiarazione `.d.ts`
       //"declarationDir": "./dist/types", // Directory dove salvare i file di dichiarazione
       "outDir": "./dist", // Directory di output per i file compilati
-      "moduleResolution": "node",  // Risoluzione dei moduli come in Node.js (ad esempio, ricerca dei moduli in `node_modules`)
+      "moduleResolution": "bundler",  // Risoluzione dei moduli come in Node.js (ad esempio, ricerca dei moduli in `node_modules`)
       "strict": true, // Abilita tutte le opzioni di controllo dei tipi stretti (più sicuro)
       "isolatedModules": true, // Tratta ogni file come modulo separato (utile per transpiling e supporto di Babel)
       "forceConsistentCasingInFileNames": true, // Garantisce coerenza nei nomi dei file (evita errori case-sensitive nei sistemi Linux)
@@ -16,6 +16,7 @@
       //"allowSyntheticDefaultImports": true, // Permette di importare moduli CommonJS usando la sintassi ES Module (`import foo from 'foo'`)
       //"skipLibCheck": true, // Salta il controllo delle librerie di tipo
       //"allowJs": true,  // Permette a TypeScript di compilare anche file JavaScript (.js)
+        "lib": ["ESNext", "DOM"],
     },
     "include": [
         //"src/**/*.*", // Include tutto
