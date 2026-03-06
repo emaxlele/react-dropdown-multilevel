@@ -1,10 +1,12 @@
-import "./index.css"
-import Divider from "./lib/components/Divider";
-import DropDownMultilevel from "./lib/components/DropDownMultilevel";
-import Item from "./lib/components/Item";
-import SubMenu from "./lib/components/SubMenu";
+import '@src/tailwind.css';
+import '@src/index.css';
+export type * from '@src/types/index.types';
+import Divider from "@src/components/Divider";
+import DropdownMultilevel from "@src/components/DropdownMultilevel";
+import Item from "@src/components/Item";
+import SubMenu from "@src/components/SubMenu";
 
 
-export default DropDownMultilevel
-export { Item , SubMenu, Divider, DropDownMultilevel}
+export default DropdownMultilevel
+export { Item , SubMenu, Divider, DropdownMultilevel}
 

@@ -1,35 +1,7 @@
 {
-    "compilerOptions": {
-      "target": "esnext",  // Imposta la versione target di ECMAScript (ad esempio, ESNext)
-      "module": "esnext",  // Usa i moduli ES per l'output (moduli ES6)
-      "declaration": true, // Abilita la generazione dei file di dichiarazione `.d.ts`
-      //"declarationDir": "./dist/types", // Directory dove salvare i file di dichiarazione
-      "outDir": "./dist", // Directory di output per i file compilati
-      "moduleResolution": "bundler",  // Risoluzione dei moduli come in Node.js (ad esempio, ricerca dei moduli in `node_modules`)
-      "strict": true, // Abilita tutte le opzioni di controllo dei tipi stretti (più sicuro)
-      "isolatedModules": true, // Tratta ogni file come modulo separato (utile per transpiling e supporto di Babel)
-      "forceConsistentCasingInFileNames": true, // Garantisce coerenza nei nomi dei file (evita errori case-sensitive nei sistemi Linux)
-      "jsx": "react-jsx", // Usa la nuova sintassi JSX di React 17+ (non richiede `React` nel codice JSX)
-      //"jsx": "react", // Abilita JSX per i file `.tsx`, compatibile con React (Richiede `React` nel codice JSX) (React 17 o successivo)
-      //"lib": ["dom", "dom.iterable", "esnext"],  // Aggiungi tipi per il DOM, iterabili del DOM, e le funzionalità più recenti di ECMAScript
-      //"esModuleInterop": true, // Permette l'uso delle importazioni CommonJS come ES Modules
-      //"allowSyntheticDefaultImports": true, // Permette di importare moduli CommonJS usando la sintassi ES Module (`import foo from 'foo'`)
-      //"skipLibCheck": true, // Salta il controllo delle librerie di tipo
-      //"allowJs": true,  // Permette a TypeScript di compilare anche file JavaScript (.js)
-        "lib": ["ESNext", "DOM"],
-    
-        "tsBuildInfoFile": "./dist-config/tsconfig.tsbuildinfo",
-    },
-    "include": [
-        //"src/**/*.*", // Include tutto
-        "src/**/*.ts",  // Include tutti i file TypeScript (.ts)
-        "src/**/*.tsx", // Include tutti i file TypeScript JSX (.tsx)
-        //"src/**/*.js",   // Include tutti i file JavaScript (.js)
-        "vite-env.d.ts"
-    ],
-    "exclude": [
-        "node_modules",  // Esclude la cartella node_modules
-        "src/**/*.css",   // Escludi i file CSS (gestiti da Vite)
-        "dist"
+    "files": [],
+    "references": [
+        { "path": "./tsconfig.app.json" },
+        { "path": "./tsconfig.node.json" }
     ]
 }

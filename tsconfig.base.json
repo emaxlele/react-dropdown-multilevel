@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "target": "ES2024", // ← JavaScript prodotto
+        "useDefineForClassFields": true, // ← Comportamento conforme alla specifica per i campi delle classi
+        "lib": ["ES2024", "DOM", "DOM.Iterable"], // ← API che puoi usare nel codice
+        "module": "ESNext", // ← Formato import/export
+        "types": ["vite/client"],
+        "skipLibCheck": true, // Salta il controllo dei tipi nei file di dichiarazione
+        "noImplicitAny": true, // Errore per variabili con tipo implicito "any"
+
+
+        /* Bundler mode */
+        "moduleResolution": "bundler", //simula la risoluzione di Node.js (utile per librerie e ambienti server)
+        //"moduleResolution": "bundler", // ottimizzato per toolchain front-end moderne (vite/esbuild), non cerca fallback in node_modules nello stesso modo.
+        "allowImportingTsExtensions": true, // Permette di importare file TypeScript con estensioni esplicite
+        "moduleDetection": "force", // Forza il rilevamento del modulo per tutti i file
+        "jsx": "react-jsx", // Supporto JSX con la nuova trasformazione React
+        "isolatedModules": true, // Ogni file è trattato come un modulo separato
+        "verbatimModuleSyntax": true, // Mantiene la sintassi del modulo così com'è nel codice sorgente - Include automaticamente isolatedModules
+
+        /* Linting */
+        "strict": true, // Abilita tutte le opzioni di controllo rigoroso
+        "noUnusedLocals": false, // Errore per variabili locali non usate
+        "noUnusedParameters": false, // Errore per parametri non usati
+        "noFallthroughCasesInSwitch": true, // Errore per casi switch che cadono attraverso
+
+        //in più:
+        "allowJs": false, // Permette di includere file JavaScript nel progetto
+        "declaration": true, // Genera file di dichiarazione
+        "emitDeclarationOnly": true, // Emette solo dichiarazioni
+        "composite": true, // Abilita la compilazione incrementale
+        "forceConsistentCasingInFileNames": true, // Forza il rispetto delle maiuscole/minuscole nei nomi dei file
+
+        "esModuleInterop": true, // Abilita l'interoperabilità tra moduli CommonJS ed ES6 - Serve per React al momento
+        "allowSyntheticDefaultImports": true, // Permette di importare moduli senza un export default come se lo avessero - Serve per React al momento
+        "resolveJsonModule": true // Permette di importare moduli JSON
+    },
+    "exclude": [
+        "node_modules",  // Esclude la cartella node_modules
+        "dist"   // Escludi la cartella dist
+    ]
+}

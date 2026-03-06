@@ -1,0 +1,83 @@
+
+html, body {
+
+}
+
+#root {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+}
+
+[data-theme="dark"] #root {
+    background-color: black;
+}
+
+:root {
+    --primary: white;
+    --secondary: black;
+    --tertiary: rgb(138, 43, 226); /* BlueViolet */
+    --quaternary: rgb(34, 139, 34); /* ForestGreen */
+    --quinary: rgb(255, 165, 0); /* Orange */
+    --senary: rgb(220, 20, 60); /* Crimson */
+    --septenary: rgb(30, 144, 255); /* DodgerBlue */
+    --octonary: rgb(255, 215, 0); /* Gold */
+    --nonary: rgb(128, 128, 128); /* Gray */
+    --denary: rgb(75, 0, 130); /* Indigo */
+
+    --purple-primary: rgb(59 7 100);
+    --purple-secondary: rgb(107 33 168);
+    --purple-tertiary: rgb(138, 43, 226);
+    --purple-quaternary: rgb(147 51 234);
+    --purple-quinary: rgb(156, 73, 205);
+    --purple-senary: rgb(63 34 95);
+    --purple-septenary: rgb(13 1 28);
+    --purple-octonary: rgb(255, 215, 0); /* Gold */
+    --purple-nonary: rgb(128, 128, 128); /* Gray */
+    --purple-denary: rgb(75, 0, 130); /* Indigo */
+
+    --background: rgb(165, 83, 241);
+    --background-secondary: rgb(156, 73, 205);
+    --background-tertiary: rgba(147,51,234,1);
+    --background-quaternary: rgba(233, 233, 233, 0.5);
+    --background-quinary: transparent;
+    --text: black;
+    --text-secondary: rgb(138, 43, 226);
+    --text-tertiary: white;
+    --box-shadow: inset -0em 0 .8em rgba(136,73,205,1);
+    --box-shadow-secondary: inset -0em 0 .8em rgba(136,73,205,1);
+    --background-hover: rgb(243, 242, 241);
+    --background-hover-secondary: rgb(243, 242, 241);
+    --speak: rgb(30 64 175);
+}
+
+[data-theme="dark"] {
+    //--primary: white;
+    //--secondary: black;
+    --tertiary: rgb(156, 73, 205);
+    --background: black;
+    --background-secondary: rgba(147,51,234,1);
+    --background-tertiary: rgb(63 34 95);
+    --background-quaternary: rgb(13 1 28);
+    --background-quinary: rgb(39, 39, 39);
+    --text: white;
+    --text-secondary: rgb(156, 73, 205);
+    --text-tertiary: black;
+    --box-shadow: inset -0em 0 .8em rgba(136,73,205,1), rgb(136, 73, 205) 0em 0px 10em;
+    --background-hover: rgb(63 34 95);
+    --sdsdsd: #303030;
+}
+
+#accessibility > button:hover {
+    outline-width: 1px;
+    outline-color: #646cff;
+    outline-style: solid;
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="version" content="1.4.01"/>
+  <title>Web Chat Test</title>
+  <!--<link rel="icon" href="/favicon.ico" />-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Script per impostare la lingua dinamica -->
+  <script>
+    // Rileva la lingua del browser
+    const userLang = navigator.language || navigator.userLanguage || "en-EN";
+
+    // Imposta la lingua dinamicamente nel tag <html>
+    document.documentElement.lang = userLang;
+
+    // Puoi anche usare navigator.languages per supportare una lista di lingue preferite
+    // const userLang = navigator.languages[0] || navigator.language;
+  </script>
+  <script type="module" src="/src/test/main.tsx"></script>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+</body>
+</html>

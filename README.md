@@ -2,6 +2,31 @@
 # react-dropdown-multilevel by emaxlele
 ReactJS multilevel dropdown component
 
+come avviare
+```bash
+# 1. Installa dipendenze
+npm install
+
+# 2. Installa browser di Playwright
+npx playwright install
+
+# ── Manuale ──────────────────────────────────
+npm run dev               # apri http://localhost:5173
+
+# ── Vitest ───────────────────────────────────
+npm run test:unit         # terminale, watch mode
+npm run test:unit:ui      # interfaccia grafica
+npm run test:coverage     # report copertura
+
+# ── Playwright ───────────────────────────────
+npm run test:e2e          # tutti i browser
+npm run test:e2e:ui       # interfaccia grafica
+
+# ── Tutto insieme ────────────────────────────
+npm run test:all
+```
+
+
 [📒 STORYBOOK](https://github.com/emaxlele/react-dropdown-multilevel-master)
 
 [![npm](https://img.shields.io/npm/v/react-dropdown-multilevel?style=plastic)](https://www.npmjs.com/package/react-dropdown-multilevel)

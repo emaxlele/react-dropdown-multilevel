@@ -1,0 +1,49 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        //"tsBuildInfoFile": "./dist-config/tsconfig.app.tsbuildinfo",
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+        /* Bundler mode */
+        "noEmit": false,
+
+        /* Linting */
+        "erasableSyntaxOnly": false,
+        "noUncheckedSideEffectImports": false,
+
+        //in più:
+        "baseUrl": ".",
+        "paths": {
+            "@root/*": ["./*"],
+            "@src/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@assets/*": ["src/assets/*"],
+            "@config/*": ["src/config/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@pages/*": ["src/pages/*"],
+            "@styles/*": ["src/styles/*"],
+            "@utility/*": ["src/utility/*"]
+        },
+
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "declarationMap": true // (opzionale) .d.ts.map
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.d.tsx",
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "src/types/vite-env.d.ts"
+    ],
+    "exclude": [
+        "node_modules/**/*",
+        "src/test/**/*",
+        "src/**/*.test.ts",
+        "src/**/*.test.tsx",
+        "src/**/*.spec.ts",
+        "src/**/*.spec.tsx"
+    ]
+}
