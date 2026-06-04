@@ -1,78 +1,48 @@
-![emaxlele - Making social media a piece of cake](https://static.emaxlele.com/img/logo/logo.svg)
+![emaxlele](https://static.emaxlele.com/img/logo/logo.svg)
 
-# react-dropdown-multilevel by emaxlele
+# react-dropdown-multilevel
 
-ReactJS multilevel dropdown component
+> Accessible, multilevel dropdown component for React — zero heavy deps, keyboard-ready.
 
-come avviare
+[![npm version](https://img.shields.io/npm/v/react-dropdown-multilevel?style=flat-square)](https://www.npmjs.com/package/react-dropdown-multilevel)
+[![npm downloads](https://img.shields.io/npm/dy/react-dropdown-multilevel?style=flat-square)](https://www.npmjs.com/package/react-dropdown-multilevel)
+[![license](https://img.shields.io/npm/l/react-dropdown-multilevel?style=flat-square)](https://github.com/emaxlele/react-dropdown-multilevel/blob/main/LICENSE)
 
-```bash
-# 1. Installa dipendenze (richiede pnpm)
-pnpm install
+**[🚀 Live demo](https://emaxlele.github.io/react-dropdown-multilevel/)** ·
+**[📦 npm](https://www.npmjs.com/package/react-dropdown-multilevel)** ·
+**[💻 GitHub](https://github.com/emaxlele/react-dropdown-multilevel)**
 
-# 2. Installa browser di Playwright
-pnpm exec playwright install
-
-# ── Demo / Playground ────────────────────────
-pnpm dev                  # apri http://localhost:5173
-
-# ── Qualità ──────────────────────────────────
-pnpm typecheck            # controllo tipi (tsc -b)
-pnpm lint                 # eslint
-
-# ── Vitest ───────────────────────────────────
-pnpm test                 # esegue i test una volta
-pnpm test:watch           # watch mode
-pnpm test:ui              # interfaccia grafica
-pnpm test:coverage        # report copertura
-
-# ── Playwright ───────────────────────────────
-pnpm test:e2e             # tutti i browser
-pnpm test:e2e:ui          # interfaccia grafica
-
-# ── Tutto insieme ────────────────────────────
-pnpm test:all
-
-# ── Build libreria ───────────────────────────
-pnpm build                # genera dist/ (ESM + .d.ts + CSS)
-```
-
-[📒 STORYBOOK](https://github.com/emaxlele/react-dropdown-multilevel-master)
-
-[![npm](https://img.shields.io/npm/v/react-dropdown-multilevel?style=plastic)](https://www.npmjs.com/package/react-dropdown-multilevel)
-[![NPM](https://img.shields.io/npm/l/react-dropdown-multilevel)](https://github.com/emaxlele/react-dropdown-multilevel-master/blob/main/LICENSE)
-[![NPM](https://img.shields.io/npm/dy/react-dropdown-multilevel?style=plastic)](https://www.npmjs.com/package/react-dropdown-multilevel)
-
-![React multilevel dropdown](https://github.com/emaxlele/react-dropdown-multilevel-master/blob/main/src/lib/images/example.png)
+![React multilevel dropdown](https://raw.githubusercontent.com/emaxlele/react-dropdown-multilevel/main/src/images/example.png)
 
 ## Table of Contents
 
 -   [Install](#install)
--   [Testing](#testing)
--   [Example](#example)
--   [Docs](#docs)
-    -   [Props](#props)
+-   [Usage](#usage)
+-   [Accessibility & keyboard](#accessibilità--tastiera)
+-   [Props](#props)
+-   [Development](#development)
+-   [License](#license)
 
 ## Install
 
-Install the npm package.
-
-**NPM:** [npmjs.com/package/react-dropdown-multilevel](https://www.npmjs.com/package/react-dropdown-multilevel)
+Install the package from npm:
 
 ```bash
 npm install react-dropdown-multilevel
 # or
+pnpm add react-dropdown-multilevel
+# or
 yarn add react-dropdown-multilevel
 ```
 
-## Testing
+Peer dependencies: `react` and `react-dom` (>= 18).
 
-`npm run storybook`
+The component's CSS is bundled and imported automatically — **no extra CSS import is required**.
 
-## Example
+## Usage
 
 ```jsx
-// Import default
+// Default import
 import DropDownMultilevel from "react-dropdown-multilevel";
 
 export const TestMenuComponent = (props) => {
@@ -90,13 +60,14 @@ export const TestMenuComponent = (props) => {
 		</DropDownMultilevel>
 	);
 };
-// or
-// Import denomination
+
+// or named imports
 import DropDownMultilevel, {
 	Divider,
 	Item,
 	SubMenu,
 } from "react-dropdown-multilevel";
+
 export const TestMenuComponent = (props) => {
 	return (
 		<DropDownMultilevel title="Dropdown title">
@@ -130,8 +101,6 @@ Quando il menu è aperto:
 | `Home` / `End` | primo / ultimo elemento                       |
 | `Esc`          | chiude il menu e riporta il focus sul bottone |
 | `Tab`          | chiude il menu e prosegue la tabulazione      |
-
-## Docs
 
 ## Props
 
@@ -168,3 +137,39 @@ Quando il menu è aperto:
 | children  | ReactNode                                          | ReactNode[]   | null |
 | position  | "left", "right", "bottom", "left-top", "right-top" | left          |
 | className | string                                             | null          |
+
+## Development
+
+Per lavorare sulla libreria in locale (richiede [pnpm](https://pnpm.io)):
+
+```bash
+# 1. Installa le dipendenze
+pnpm install
+
+# 2. Installa i browser di Playwright (per gli e2e)
+pnpm exec playwright install
+
+# ── Demo / Playground ────────────────────────
+pnpm dev                  # apri http://localhost:5173
+
+# ── Qualità ──────────────────────────────────
+pnpm typecheck            # controllo tipi (tsc -b)
+pnpm lint                 # eslint
+
+# ── Test ─────────────────────────────────────
+pnpm test                 # vitest (unit)
+pnpm test:e2e             # playwright (e2e, tutti i browser)
+pnpm test:all             # unit + e2e
+
+# ── Build libreria ───────────────────────────
+pnpm build                # genera dist/ (ESM + .d.ts + CSS)
+```
+
+La pubblicazione su npm avviene in automatico via GitHub Actions
+(`.github/workflows/publish.yml`, OIDC Trusted Publishing) quando viene
+pubblicata una release con tag `vX.Y.Z` allineato a `package.json`.
+
+## License
+
+[Apache-2.0](https://github.com/emaxlele/react-dropdown-multilevel/blob/main/LICENSE) © emaxlele
+</content>
