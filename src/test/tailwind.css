@@ -1,27 +1,28 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 /* Configurazione del tema */
 @theme {
-    /* Font Families */
-    --font-family-bot: Calibri, 'Helvetica Neue', Arial, sans-serif;
-    --font-family-cursive: cursive;
+	/* Font Families */
+	--font-family-bot: Calibri, "Helvetica Neue", Arial, sans-serif;
+	--font-family-cursive: cursive;
 
-    /* Colors - mappati dalle tue variabili CSS esistenti */
-    --color-primary: var(--primary);
-    --color-secondary: var(--secondary);
-    --color-tertiary: var(--tertiary);
-    --color-background: var(--background);
-    --color-background-secondary: var(--background-secondary);
-    --color-background-tertiary: var(--background-tertiary);
-    --color-background-quaternary: var(--background-tertiary);
-    --color-background-quinary: var(--background-quinary);
-    --color-background-hover: var(--background-hover);
-    --color-text: var(--text);
-    --color-text-secondary: var(--text-secondary);
-    --color-text-tertiary: var(--text-tertiary);
-    --color-box-shadow: var(--box-shadow);
-    --color-box-shadow-secondary: var(--box-shadow-secondary);
-    --color-speak: var(--speak);
+	/* Colors - mappati dalle tue variabili CSS esistenti */
+	--color-primary: var(--primary);
+	--color-secondary: var(--secondary);
+	--color-tertiary: var(--tertiary);
+	--color-background: var(--background);
+	--color-background-secondary: var(--background-secondary);
+	--color-background-tertiary: var(--background-tertiary);
+	--color-background-quaternary: var(--background-tertiary);
+	--color-background-quinary: var(--background-quinary);
+	--color-background-hover: var(--background-hover);
+	--color-text: var(--text);
+	--color-text-secondary: var(--text-secondary);
+	--color-text-tertiary: var(--text-tertiary);
+	--color-box-shadow: var(--box-shadow);
+	--color-box-shadow-secondary: var(--box-shadow-secondary);
+	--color-speak: var(--speak);
 }
 
 /* Dark mode con data-theme */
@@ -29,10 +30,9 @@
 
 /* Utility personalizzata per word-break */
 @utility word-break-break-word {
-    word-break: break-word;
+	word-break: break-word;
 }
 
 /* Stili globali */
 @layer base {
-
 }

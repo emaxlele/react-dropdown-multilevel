@@ -10,10 +10,10 @@
 	],
 	"author": "emaxlele <emaxlele97@gmail.com>",
 	"license": "Apache-2.0",
-	"homepage": "https://github.com/emaxlele/react-dropdown-multilevel-master",
+	"homepage": "https://github.com/emaxlele/react-dropdown-multilevel",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/emaxlele/react-dropdown-multilevel-master.git"
+		"url": "git+https://github.com/emaxlele/react-dropdown-multilevel.git"
 	},
 	"keywords": [
 		"reactjs",
@@ -29,7 +29,7 @@
 		"emaxlele"
 	],
 	"bugs": {
-		"url": "https://github.com/emaxlele/react-dropdown-multilevel-master/issues"
+		"url": "https://github.com/emaxlele/react-dropdown-multilevel/issues"
 	},
 	"exports": {
 		"./package.json": "./package.json",
@@ -50,6 +50,7 @@
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"build": "pnpm clean && vite build && node scripts/prepare-dist-package.js",
+		"build:demo": "vite build --config vite.demo.config.ts",
 		"pack:lib": "pnpm build && cd dist && npm pack",
 		"test": "vitest run",
 		"test:watch": "vitest",

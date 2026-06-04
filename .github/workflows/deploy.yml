@@ -1,44 +1,59 @@
-# Nome dell'azione
-name: Update Demo
+name: Deploy Demo
 
-# L'azione viene attivata ogni volta che viene eseguito un push su un tag
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - main
+  workflow_dispatch:
 
-# Inizia la definizione del lavoro di deploy
+# Permessi necessari per il deploy su GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Consenti un solo deploy concorrente, senza annullare quelli in corso
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  deploy:
-    # Assicura che solo un lavoro venga eseguito per ogni riferimento
-    concurrency: ci-${{ github.ref }}
-    # Il lavoro verrà eseguito su una macchina virtuale con l'ultima versione di Ubuntu
+  build:
     runs-on: ubuntu-latest
-
-    # Inizia la lista dei passaggi che il lavoro eseguirà
     steps:
-      # Controlla il codice sorgente nel branch gh-pages del tuo repository
-      - uses: actions/checkout@v3
-        with:
-          ref: "gh-pages"
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      # Configura Node.js sulla macchina virtuale
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: 24
+          cache: pnpm
 
-      # Installa le dipendenze, aggiorna il pacchetto react-dropdown-multilevel all'ultima versione e costruisce l'applicazione
-      - name: Build
-        run: |
-          yarn install --silent
-          yarn upgrade react-dropdown-multilevel --latest
-          yarn build_linux
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      # Implementa l'applicazione su GitHub Pages
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Build demo
+        run: pnpm build:demo
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.DROPDOWN }}
-          publish_dir: ./
-          destination_dir: ./
+          path: dist-demo
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
