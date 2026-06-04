@@ -1,29 +1,30 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 /* Configurazione del tema */
 @theme {
-    /* Font Families */
-    --font-family-bot: Calibri, 'Helvetica Neue', Arial, sans-serif;
-    --font-family-cursive: cursive;
+	/* Font Families */
+	--font-family-bot: Calibri, "Helvetica Neue", Arial, sans-serif;
+	--font-family-cursive: cursive;
 
-    /* Colors - mappati dalle tue variabili CSS esistenti */
-    --color-primary: var(--primary);
-    --color-secondary: var(--secondary);
-    --color-tertiary: var(--tertiary);
-    --color-background: var(--background);
-    --color-background-secondary: var(--background-secondary);
-    --color-background-tertiary: var(--background-tertiary);
-    --color-background-quaternary: var(--background-tertiary);
-    --color-background-quinary: var(--background-quinary);
-    --color-background-hover: var(--background-hover);
-    --color-text: var(--text);
-    --color-text-light: var(--text-light);
-    --color-text-dark: var(--text-dark);
-    --color-text-secondary: var(--text-secondary);
-    --color-text-tertiary: var(--text-tertiary);
-    --color-box-shadow: var(--box-shadow);
-    --color-box-shadow-secondary: var(--box-shadow-secondary);
-    --color-speak: var(--speak);
+	/* Colors - mappati dalle tue variabili CSS esistenti */
+	--color-primary: var(--primary);
+	--color-secondary: var(--secondary);
+	--color-tertiary: var(--tertiary);
+	--color-background: var(--background);
+	--color-background-secondary: var(--background-secondary);
+	--color-background-tertiary: var(--background-tertiary);
+	--color-background-quaternary: var(--background-tertiary);
+	--color-background-quinary: var(--background-quinary);
+	--color-background-hover: var(--background-hover);
+	--color-text: var(--text);
+	--color-text-light: var(--text-light);
+	--color-text-dark: var(--text-dark);
+	--color-text-secondary: var(--text-secondary);
+	--color-text-tertiary: var(--text-tertiary);
+	--color-box-shadow: var(--box-shadow);
+	--color-box-shadow-secondary: var(--box-shadow-secondary);
+	--color-speak: var(--speak);
 }
 
 /* Dark mode con data-theme */
@@ -31,66 +32,66 @@
 
 /* Utility personalizzata per word-break */
 @utility word-break-break-word {
-    word-break: break-word;
+	word-break: break-word;
 }
 
 /* Stili globali */
 @layer base {
-
 }
 
 @layer components {
+	/* ── Wrapper del submenu (è un <li>) ────────────────────── */
+	.submenu-wrapper {
+		@apply relative list-none;
+	}
 
-    /* ── Wrapper del submenu (è un <li>) ────────────────────── */
-    .submenu-wrapper {
-        @apply relative list-none;
-    }
-
-    /* ── Trigger (riga cliccabile) ──────────────────────────── */
-    .submenu-trigger {
-        @apply flex items-center justify-between gap-4
+	/* ── Trigger (riga cliccabile) ──────────────────────────── */
+	.submenu-trigger {
+		@apply flex items-center justify-between gap-4
         px-4 py-2 cursor-pointer
         hover:bg-gray-100 select-none;
-    }
+	}
 
-    .submenu-trigger.active {
-        @apply bg-gray-100;
-    }
+	.submenu-trigger.active {
+		@apply bg-gray-100;
+	}
 
-    .submenu-trigger.disabled {
-        @apply opacity-50 cursor-not-allowed pointer-events-none;
-    }
+	.submenu-trigger.disabled {
+		@apply opacity-50 cursor-not-allowed pointer-events-none;
+	}
 
-    /* ── Freccia ────────────────────────────────────────────── */
-    .submenu-arrow {
-        @apply text-xs text-gray-400 ml-auto;
-    }
+	/* ── Freccia ────────────────────────────────────────────── */
+	.submenu-arrow {
+		@apply inline-flex items-center justify-center
+        text-sm text-gray-400 ml-auto
+        transition-transform duration-150;
+	}
 
-    /* ── Pannello del submenu ───────────────────────────────── */
-    .submenu-panel {
-        @apply absolute z-50
+	/* ── Pannello del submenu ───────────────────────────────── */
+	.submenu-panel {
+		@apply absolute z-50
         bg-white shadow-lg rounded-md
         py-1 min-w-40;
-    }
+	}
 
-    /* ── Posizioni del pannello ─────────────────────────────── */
-    .submenu-right {
-        @apply left-full top-0 ml-1;
-    }
+	/* ── Posizioni del pannello ─────────────────────────────── */
+	.submenu-right {
+		@apply left-full top-0 ml-1;
+	}
 
-    .submenu-left {
-        @apply right-full top-0 mr-1;
-    }
+	.submenu-left {
+		@apply right-full top-0 mr-1;
+	}
 
-    .submenu-bottom {
-        @apply left-0 top-full mt-1;
-    }
+	.submenu-bottom {
+		@apply left-0 top-full mt-1;
+	}
 
-    .submenu-right-top {
-        @apply left-full bottom-0 ml-1;
-    }
+	.submenu-right-top {
+		@apply left-full bottom-0 ml-1;
+	}
 
-    .submenu-left-top {
-        @apply right-full bottom-0 mr-1;
-    }
+	.submenu-left-top {
+		@apply right-full bottom-0 mr-1;
+	}
 }
