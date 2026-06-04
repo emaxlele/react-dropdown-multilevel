@@ -11,6 +11,10 @@ permissions:
   contents: read
   id-token: write
 
+# Forza le JS-actions su Node 24 (Node 20 deprecato dal 16/09/2026)
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   publish:
     runs-on: ubuntu-latest
