@@ -1,6 +1,6 @@
 {
 	"name": "react-dropdown-multilevel",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "ReactJS multilevel dropdown component",
 	"type": "module",
 	"module": "./index.js",
